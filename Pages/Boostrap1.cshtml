@@ -1,0 +1,159 @@
+@page
+@{
+  Layout=null;
+}
+
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Rezha</title>
+    <style>
+      body{
+        background-image: url(wwwroot/img/bg.png);
+
+      }
+       .navbar{
+         background-color: blue;
+       }
+        .jumbotron{
+          background-color: #e2edff ;
+        }
+.dropdownMenuButton{
+  color: #e2edff;
+}
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">latihan1 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+    Master
+     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Dosen</a>
+    <a class="dropdown-item" href="#">Mahasiswa</a>
+   
+  </div>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Dosen</a>
+    <a class="dropdown-item" href="#">Mahasiswa</a>
+   
+  </div>
+</div>
+            <li class="nav-item">
+              <a class="nav-link ">Rekap</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+  <div class="jumbotron text-center" id="jumbotron" >
+   
+  
+ <img src="~/img/1.jpeg" alt="Rezha Reinaldi" width="250" class="rounded-circle "/>
+</div>
+</div>
+<section id="About">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col">
+        <h2> Tentang </h2>     
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis accusamus ad facere temporibus rerum natus inventore necessitatibus, modi nesciunt. Velit.</p>
+      </div>
+      <div class="col-4">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempore aspernatur quam odit, tenetur beatae quidem neque fugit eos sed eligendi, maxime odio at ad inventore. Et vel odit accusamus!</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<br><br>
+      <div class="container">
+       <h1>Form Absensi</h1>
+       <form>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Nama</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputNama3">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">NPM/NIDN</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputNPM/NIDN3">
+    </div>
+  </div>
+  <fieldset class="form-group row">
+    <legend class="col-form-label col-sm-2 float-sm-left pt-0">Keterangan</legend>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+        <label class="form-check-label" for="gridRadios1">
+          Hadir
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+        <label class="form-check-label" for="gridRadios2">
+          Sakit
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" >
+        <label class="form-check-label" for="gridRadios3">
+          Izin
+        </label>
+      </div>
+    </div>
+  </fieldset>
+ 
+ 
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Kirim</button>
+    </div>
+  </div>
+</form>
+        
+
+      </div>
+      <footer>
+        <footer class="bg-primary text-white"></footer>
+        <p>Created with love  </p>
+      </footer>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+ 
+  </body>
+</html>

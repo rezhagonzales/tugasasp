@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\NITRO 5\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\NITRO 5\\.nuget\\packages"
+    ]
+  }
+}
