@@ -20,7 +20,7 @@ namespace latihan1.Pages
         public IActionResult OnGet()
         {
             if (!User.Identity.IsAuthenticated){
-                return new RedirectToPageResult("Home");
+                return new RedirectToPageResult("Login");
             }
             return Page();
         }

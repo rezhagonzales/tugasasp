@@ -31,7 +31,7 @@ namespace latihan1
             services.Configure<CookiePolicyOptions> (options =>
             {
                     // This lambda datermines wheter user consent for non-essential cooki
-                    options.CheckConsentNeeded = ContextBoundObject => true;
+                    options.CheckConsentNeeded = Context => true;
                     options.MinimumSameSitePolicy = SameSiteMode.None;
 
             });
@@ -39,7 +39,7 @@ namespace latihan1
                 .AddCookie(cookieOptions => {
                     cookieOptions.LoginPath = "/";
                 });
-                services.AddMvc().AddRazorPagesOptions(options => {
+            services.AddMvc().AddRazorPagesOptions(options => {
                     options.Conventions.AuthorizeFolder("/Index");
 
                 }).SetCompatibilityVersion(CompatibilityVersion.Latest);

@@ -22,33 +22,40 @@ namespace latihan1.Pages
         }
         [BindProperty]
         public string UserEmail { get; set; }
-        [BindProperty, DataType(DataType.Password)]
+        [BindProperty]
 
         public string Password { get; set;}
         public string Message { get; set; }
 
-        public async Task<IActionResult> onPostAsync(){
+        public async Task<IActionResult> OnPostAsync(){
             var user = configuration.GetSection("User").Get<User>();
 
             if (UserEmail == user.Email)
-{
-             var passwordHasher = new PasswordHasher<string>();
-             if (passwordHasher.VerifyHashedPassword(null,user.Password,Password)
-                    == PasswordVerificationResult.Success)
+{             if(Password==user.Password)                   
+                    
                 {
                     var claims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Name, UserEmail)
+                        new Claim(ClaimTypes.Name, UserEmail),
+                        new Claim(ClaimTypes.Role,"admin")
                     };
                     var claimsIdentity = new ClaimsIdentity(claims,
                         CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(claimsIdentity));
-                    return RedirectToPage("/index");
+                    return RedirectToPage("Boostrap1");
                 }
-        }
-        Message = "Invalid attempt";
+                 Message = "Password Salah";
         return Page();
         
-     } }
+        }
+        Message = "User Tidak Terdaftar";
+        return Page();
+        
+     }
+     public void OnGet()
+     {
+         
+     }
+      }
 }

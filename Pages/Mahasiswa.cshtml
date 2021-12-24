@@ -1,0 +1,94 @@
+@page
+@model MahasiswaModel
+@{
+    ViewData["Title"]="add Mahasiswa";
+}
+<h4>Add Mahasiswa</h4>
+<h2>Status DB: @TempData["cekkoneksi"]</h2>
+<hr/>
+<button class="btn btn-lg btn-primary btn-block text-uppercase col-md-3 type" type="button"
+onclick="location.href='/Mahasiswaadd'">Add Mahasiswa</button>
+
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-stripe border">
+            <tr class="table scondary">
+                <th>ID</th>
+                <th>Nim</th>
+                <th>Nama</tr>
+                <th>kelas<th>
+                <th>Jurusan<th>
+                <th>Action</th>
+            </tr>
+            @foreach (var item in @Model.DataMahasiswa)
+            {
+                <tr>
+                    <td>Html.DisplayFor(m => item.Id)</td>
+                    <td>Html.DisplayFor(m => item.Nim)</td>
+                    <td>Html.DisplayFor(m => item.Nama)</td>
+                    <td>Html.DisplayFor(m => item.Kelas)</td>
+                    <td>Html.DisplayFor(m => item.Jurusan)</td>
+                    <td>
+                        <a href="Mahasiswaadd?action=edit&id=@item.Id">Edit</a>
+
+                        <a href="Mahasiswaadd?action=delete&id=@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+<div class="col-md-4">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly"class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Mhs.Nama" class="control-label"></label>
+                    <input asp-for="Mhs.Nama" class="form-control"/>
+                    <span asp-validation-for="Mhs.Nama" class="text-danger"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mhs.Kelas" class="control-label"></label>
+                    <input asp-for="Mhs.Kelas" class="form-control"/>
+                    <span asp-validation-for="Mhs.Kelas" class="text-danger"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mhs.TempatLahir" class="control-label"></label>
+                    <input asp-for="Mhs.TempatLahir" class="form-control"/>
+                    <span asp-validation-for="Mhs.TempatLahir" class="text-danger"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mhs.TglLahir" class="control-label"></label>
+                    <input asp-for="Mhs.TglLahir" class="form-control"/>
+                    <span asp-validation-for="Mhs.TglLahir" class="text-danger"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mhs.TinggiBadan" class="control-label"></label>
+                    <input asp-for="Mhs.TinggiBadan" class="form-control"/>
+                    <span asp-validation-for="Mhs.TinggiBadan" class="text-danger"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mhs.Hp" class="control-label"></label>
+                    <input asp-for="Mhs.Hp" class="form-control"/>
+                    <span asp-validation-for="Mhs.Hp" class="text-danger"/>
+            </div>
+        <div class="form-group">
+            <input type="submit" value="Simpan" class="btn btn-primary"/>
+        </div>
+    </form>
+  
+</div>
+Data Mahasiswa<br>
+    @if(TempData["namaMahasiswa"]!=null){
+        <div class="form-group">
+            <br>
+            Nama: @TempData["namaMahasiswa"]<br>
+            Kelas: @TempData["kelasMahasiswa"]<br>
+            Tempat TGL Lahir: @TempData["tempatMahasiswa"]/@TempData["tglMahasiswa"]<br>
+            Tinggi: @TempData["tinggiMahasiswa"]<br>
+            HP: @TempData["hpMahasiswa"]<br>
+        </div>
+        
+    }
+</div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptPartial");}
+}

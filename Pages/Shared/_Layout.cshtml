@@ -6,6 +6,60 @@
     <title>@ViewData["Title"] - latihan1</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <style>
+        .mynav_navbar{
+            overflow: hidden;
+        }
+        .mynav_navbar a{
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .mynav_dropdown{
+            float: left;
+            overflow: hidden;
+
+        }
+        .mynav_dropdown .mynav_dropbtn{
+            font-size: 16px;
+            border: none;
+            outline: none;
+            padding: 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .mynav_navbar a:hover, .mynav_dropdown:hover .mynav_dropbtn{
+            background-color: red;
+        }
+        .mynav_dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            padding: 12px 16px;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgb(0,0,0,0,2);
+            z-index: 1;
+        }
+        .mynav_dropdown-content a{
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left; 
+        }
+        .mynav_dropdown-content a:hover{
+            background-color: #ddd;
+        }
+        .mynav_dropdown:hover .mynav_dropdown-content{
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,8 +81,8 @@
                                 <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="mynav_dropdown-content">
-                                <a href="/Mahasiswa"classnav-link text-dark">Mahasiswa</a>
-                                <a href="/Dosen"classnav-link text-dark">Dosen</a>
+                                <a href="/Mahasiswa"class="nav-link text-dark">Mahasiswa</a>
+                                <a href="/Dosen"class="nav-link text-dark">Dosen</a>
                             </div>
                         </div>
                         <div class="mynav_navbar">
@@ -51,61 +105,7 @@
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <style>
-        .mynav_navbar{
-            overflow: hidden;
-        }
-        .mynav_navbar a{
-            float: left;
-            font-size: 16px;
-            color: white;
-            text-align: center;
-            
-            text-decoration: none;
-        }
-        .mynav_dropdown{
-            float: left;
-            overflow: hidden;
-
-        }
-        .mynav_dropdown .mynav_dropbtn{
-            font-size: 16px;
-            border: none;
-            outline: none;
-           
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
-        }
-        .mynav_navbar a:hover, .mynav_dropdown:hover .mynav_dropbtn{
-            background-color: red;
-        }
-        .mynav_dropdown-content{
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 100px;
-            box-shadow: 0px 8px 16px 0px rgb((0,0,0,0,2));
-            z-index: 1;
-        }
-        .mynav_dropdown-content a{
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left; 
-        }
-        .mynav_dropdown-content a:hover{
-            background-color: #ddd;
-        }
-        .mynav_dropdown:hover .mynav_dropdown-content{
-            display: block;
-        }
-    </style>
+    
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

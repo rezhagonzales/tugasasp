@@ -18,20 +18,21 @@
                 <div class=" card card-sign my-5">
                     <div class="card-body">
                         <h5 class="card-tittle text-center">Sign in</h5>
-                        <form class="form-signin">
+                        <form class="form-signin" method="POST"> 
                             <div class="form-label-group">
-                                <label for="inputEmail">Email address</label>
-                                <input type="email" id="inputEmail" class="form-control" placeholder="Email addres"
+                                <label asp-for="UserEmail">Email address</label>
+                                <input asp-for="UserEmail" type="email" id="UserEmail" class="form-control" placeholder="Email addres"
                                 required autofocus>
                         
                             </div>
                             <div class="form-label-group">
-                                <label for="inputpassword">Password</label>
-                                <input type="password" id="inputpassword" class="form-control" placeholder="Password" required>
+                                <label asp-for="Password">Password</label>
+                                <input asp-for="Password" type="password" id="Password" class="form-control" placeholder="Password" required>
                             </div> 
                             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
                         </form>
                     </div>
+                    @Model.Message;
                 </div>
             </div>
         </div>

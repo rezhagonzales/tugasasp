@@ -2,8 +2,11 @@
 @model IndexModel
 @{
   ViewData ["Title"] = "Home page";
+  Layout=null;
 }
 <div class="text-center">
-  <h1 class="display-4"> Project First Website </h1>
-  <p>Belajar ASP.NET Mudah dan menyenangkan !!! </p>
+  <h1 class="display-4"> Project First Website @User.Identity.Name</h1>
+  <p>Belajar ASP.NET Mudah dan menyenangkan !!! </p> 
+  <p><a href="/Logout">Logout</a></p>
+  <p>Learn about <a href="http://docs.microsoft.com/aspnet/core">Buiding Web apps with ASP.NET Core</a></p>
 </div>
